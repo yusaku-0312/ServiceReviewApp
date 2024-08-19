@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <main class="output-container">
+        <div class="review-container">
+            <!-- 項目ごとにボックス分けする -->
+            <h2>サービスを使ったきっかけ</h2>
+            <p>{{ review_dict["このサービスを使おうと思ったきっかけ"] }}</p>
+            <hr>
+            <h2>良かった点</h2>
+            <p>{{ review_dict["良かった点"] }}</p>
+            <hr>
+            <h2>悪い点</h2>
+            <p>{{ review_dict["悪い点"] }}</p>
+            <hr>
+            <h2>総評</h2>
+            <p>{{ review_dict["総評"] }}</p>
+            <hr>
+        </div>
+        <div class="output-btn-set">
+            <form action="{{ url_for('output') }}" method="POST">
+                <input type="hidden" name="service_dict" value="{{ service_dict }}">
+                <button type="submit" class="regenerate-btn">レビューを再生成</button>
+            </form>
+            <a href="{{ url_for('home') }}#form" class="main-button">フォームに戻る</a>
+        </div>
+    </main>
+</div>
+{% endblock %}

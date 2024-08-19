@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="home-main">
+        <div class="main-text">
+            <h2 id="sub-title">未来をシミュレートする力</h2>
+            <h3>アイデアを現実に。可能性を無限大に。</h3>
+            <a href="#form" class="form-button">使ってみる</a>    
+        </div>
+    </div>
+    <div class="form-container" id="form">
+        <section id="discription">
+            <p>様々な仮想ペルソナが、あなたの製品やサービスを体験＆レビュー生成<br>
+                サービス名とサービス内容を入力すると、レビューが生成されます。</p>
+            <form action="{{ url_for('output') }}" method="post">
+                <dl>
+                    <dt class="form-title">サービス名</dt>
+                    <dd><input type="text" name="service-title" placeholder="商品名" class="form-content"></dd>
+                    <dt class="form-title">サービス詳細</dt>
+                    <dd><textarea name="service-content" placeholder="商品詳細（機能、見た目、特徴、価格など）" class="form-content" cols="50", rows="10"></textarea></dd>
+                </dl>
+                <p><input class="form-submit" type="submit" value="商品レビューを出力する"></p>
+            </form>
+            <p id="attention">※出力に多少の時間がかかります</p>
+        </section>
+    </div>
+</div>
+{% endblock %}
