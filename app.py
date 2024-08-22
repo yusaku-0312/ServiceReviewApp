@@ -17,6 +17,7 @@ def generate_review_dict(service_title, service_content):
                 persona = Persona(persona_dicts[persona_index])
                 review = persona.generate_review(service_title, service_content) #reviewはdict型, jsonで返ってくる
                 generate_persona_flag = False
+                print(service_content)
             except Exception as e:
                 print(e)
     return review
