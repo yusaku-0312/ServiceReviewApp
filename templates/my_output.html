@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Experience Simulation</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/my_style.css') }}">
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="header-logo">Experience Simulation</h1>
+            <h2 class="company-name">{{ company_name }}</h2>
+        </div>
+        <div class="container">
+            {% for review_dict in review_ls %}
+                <dl>
+                    <dt class="review-title">サービスを使ったきっかけ</dt>
+                    <dd class="review-content">{{ review_dict["このサービスを使おうと思ったきっかけ"] }}</dd>
+
+                    <dt class="review-title">良かった点</dt>
+                    <dd class="review-content">{{ review_dict["良かった点"] }}</dd>
+
+                    <dt class="review-title">悪い点</dt>
+                    <dd class="review-content">{{ review_dict["悪い点"] }}</dd>
+
+                    <dt class="review-title">総評</dt>
+                    <dd class="review-content">{{ review_dict["総評"] }}</dd>
+                </dl>
+                <br>
+                <hr>
+                <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

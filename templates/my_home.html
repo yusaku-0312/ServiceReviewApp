@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Experience Simulation</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="form-container" id="form">
+            <section id="discription">
+                <p>様々な仮想ペルソナが、あなたの製品やサービスを体験＆レビュー生成<br>
+                    サービス名とサービス内容を入力すると、レビューが生成されます。</p>
+                <form action="{{ url_for('my_output') }}" method="post">
+                    <dl>
+                        <dt class="form-title">会社名</dt>
+                        <dd><input type="text" name="company-name" placeholder="会社名" class="form-content"></dd>
+                        <dt class="form-title">サービス名</dt>
+                        <dd><input type="text" name="service-title" placeholder="商品名" class="form-content"></dd>
+                        <dt class="form-title">サービス詳細</dt>
+                        <dd><textarea name="service-content" placeholder="商品詳細（機能、見た目、特徴、価格など）" class="form-content" cols="50", rows="10"></textarea></dd>
+                        <dt class="form-title">生成数</dt>
+                        <dd><input type="number" name="generate-number" min="0" step="1"></dd>
+                    </dl>
+                    <p><input class="form-submit" type="submit" value="生成"></p>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>

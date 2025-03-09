@@ -1,0 +1,27 @@
+.container {
+    width: 70vw;
+    margin: 0 auto;
+    font-family: Arial;
+}
+
+.header { 
+    display: flex;
+    align-items: center; /* 高さを揃えるために追加 */
+    text-align: center;
+}
+
+.header-logo {
+    margin-right: auto; /* 左側に寄せる */
+}
+
+.company-name { 
+    margin-left: auto; /* 右側に寄せる */
+}
+/* 
+.review-title {
+    text-align: center;
+} */
+
+.review-content { 
+    text-align: left;
+}
