@@ -38,7 +38,7 @@ class Persona:
         self.current_challenges = persona_dict["current_challenges"]
         self.goals = persona_dict["goals"]
         self.needs = persona_dict["needs"]
-        self.model = genai.GenerativeModel('gemini-1.5-pro')
+        self.model = genai.GenerativeModel('gemini-2.0-flash-lite')
 
 #ありきたりな感想はやめましょう！！ 良結果
     def generate_review(self, service_titile, service_content):
